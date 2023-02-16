@@ -2,6 +2,10 @@ import React , {useEffect} from 'react'
 import './Navbar.css';
 import { NavLink } from 'react-router-dom';
 import $ from "jquery";
+import Form from 'react-bootstrap/Form';
+import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
+import CardHeader from 'react-bootstrap/esm/CardHeader';
 
 function Navbar () {
 
@@ -44,13 +48,12 @@ function Navbar () {
   }, []);
 
   return (
+    <Card>
+     
   <nav className="navbar navbar-expand-lg navbar-mainbg">
-    
-      <NavLink className="navbar-brand navbar-logo" to="/" exact>
+ <NavLink className="navbar-brand navbar-logo" to="/" exact> 
        <div class="Font"> <b> Where Next</b> </div>
       </NavLink>
-    
-    
       <button 
         className="navbar-toggler"
         onClick={ function(){
@@ -107,7 +110,21 @@ function Navbar () {
             </li>
         </ul>
       </div>
+      <div className="search"> 
+        <Form className="d-flex">
+         
+            <Form.Control
+              type="search"
+              placeholder="Search"
+              className="me-2"
+              aria-label="Search"
+            />
+            <Button variant="outline-success">Search</Button>
+          
+          </Form>
+             </div> 
   </nav>
+  </Card>
   )
 }
 export default Navbar;
